@@ -22,7 +22,7 @@ GEM_NAME         = 'data_mapper'
 GEM_VERSION      = '1.2.0'
 GEM_DEPENDENCIES = gems.map { |gem_name|
   if gem_name == "dm-core"
-    [ gem_nam, "= #{GEM_VERSION}", :git => 'https://github.com/jbrennan/dm-core.git' ]
+    [ gem_nam, "= 1.2.1", :git => 'https://github.com/jbrennan/dm-core.git', :ref => '8c07793034a0' ]
   else
     [ gem_name, "= #{GEM_VERSION}" ]
   end
