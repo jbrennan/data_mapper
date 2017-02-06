@@ -20,7 +20,13 @@ AUTHOR           = 'Dan Kubb'
 EMAIL            = 'dan.kubb@gmail.com'
 GEM_NAME         = 'data_mapper'
 GEM_VERSION      = '1.2.0'
-GEM_DEPENDENCIES = gems.map { |gem_name| [ gem_name, "= #{GEM_VERSION}" ] }
+GEM_DEPENDENCIES = gems.map { |gem_name|
+  if gem_name == "dm-core"
+    [ gem_nam, "= #{GEM_VERSION}", :git => 'https://github.com/jbrennan/dm-core.git' ]
+  else
+    [ gem_name, "= #{GEM_VERSION}" ]
+  end
+}
 GEM_CLEAN        = %w[ **/*.{gem,DS_Store} *.db doc/rdoc .config **/coverage cache ]
 GEM_EXTRAS       = { :has_rdoc => 'yard' }
 
